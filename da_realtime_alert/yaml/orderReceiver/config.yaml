@@ -1,0 +1,39 @@
+---
+VERSION: d1.0.0.14
+
+TIMEZONE: UTC
+TIMEZONE_DIFF: +00:00
+
+
+PARAMETERS_UPDATE_PERIOD: 43200   # seconds 14400
+
+NEWEST_PLAYERS_SETTING:
+    AVG_BET_SETTING: 500
+    BEFORE_DAYS: 30
+
+PLAYER_DIFF_AVG_BET_SETTING:
+    AVG_BET_RATE: 5 #bet >= avgBet多少倍
+    BEFORE_DAYS: 30 # 抓會員過去多少天之內的avgBet 
+    ROUND_THRESHOLD: 100 # 會員線上玩多少rounds之後才做偵測
+    AVG_BET_ROUND_THRESHOLD: 2000 # 抓會員過去的avgBet,必須要大於多少rounds 
+
+
+REDIS_SETTING:
+    TTL: 900   #seconds
+
+# rabbitMQ setting
+ARGUMENTS: &ARGUMENTS
+    DURABLE: False
+    X_MAX_LENGTH_BYTES: 600000
+    X_OVERFLOW: drop-head
+
+ORDERS_RABBIT_MQ:
+    <<: *ARGUMENTS
+    HOST: 10.100.6.5
+    PORT: 5672
+    VHOST: /cypress
+    QUEUE: orders
+    EXCHANGE: cypress.direct
+    USER: cypressAPI
+    PASSWORD: 12_cypressAPI_345
+

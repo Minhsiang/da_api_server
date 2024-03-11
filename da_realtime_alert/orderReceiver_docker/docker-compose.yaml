@@ -1,0 +1,123 @@
+version: '3'
+services:
+  remove_redis_zset_old_data_1:   
+    image: 'asia.gcr.io/nepnep-5566/da1/remove_redis_zset_old_data:latest'
+    restart: always
+    container_name: remove_redis_zset_old_data_1
+    privileged: true
+    volumes: 
+      - /tmp/removeRedisZSET_oldData/log:/removeRedisZSET_oldData/log 
+      - /home/rmjames0345/yaml/removeRedisZSET_oldData/dbConfig.yaml:/removeRedisZSET_oldData/dbConfig.yaml 
+      - /home/rmjames0345/yaml/removeRedisZSET_oldData/config.yaml:/removeRedisZSET_oldData/config.yaml 
+      - /home/rmjames0345/yaml/removeRedisZSET_oldData/logging.yaml:/removeRedisZSET_oldData/logging.yaml 
+
+  redis_1:   
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_1
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log1:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_2:   
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_2
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log2:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_3:   
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_3
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log3:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_4:   
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_4
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log4:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_5:
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_5
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log5:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_6:  
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_6
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log6:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_7:  
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_7
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log7:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_8:  
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_8
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log8:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_9:  
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_9
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log9:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
+  redis_10:  
+    image: 'asia.gcr.io/nepnep-5566/da1/order_receiver:latest'
+    restart: always
+    container_name: orderReceiver_10
+    privileged: true
+    volumes: 
+      - /tmp/orderReceiver/log10:/orderReceiver/log 
+      - /home/rmjames0345/yaml/orderReceiver/dbConfig.yaml:/orderReceiver/dbConfig.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/config.yaml:/orderReceiver/config.yaml 
+      - /home/rmjames0345/yaml/orderReceiver/logging.yaml:/orderReceiver/logging.yaml 
+
