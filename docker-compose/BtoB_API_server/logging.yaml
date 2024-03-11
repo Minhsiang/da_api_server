@@ -1,0 +1,93 @@
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+    jsonFormat:
+        (): json_log_formatter.VerboseJSONFormatter
+
+#    simple:
+#        format: "%(asctime)s - %(name)s:%(funcName)s():(%(threadName)s) - %(levelname)s - %(message)s"
+#    
+#    console:
+#        format: "%(asctime)s - %(name)s:%(funcName)s():(%(threadName)s) - %(levelname)s - %(message)s"
+
+handlers:
+#    console:
+#        class: logging.StreamHandler
+#        level: DEBUG
+#        formatter: console
+#        stream: ext://sys.stdout
+
+    info_file_handler:
+#        class: logging.handlers.TimedRotatingFileHandler
+        (): logging_handlers.myFileHandler
+        level: DEBUG
+        formatter: jsonFormat
+        backupCount: 0
+        when: "midnight"
+        interval: 1 
+        encoding: utf8
+
+#    warn_file_handler:
+#        class: logging.handlers.TimedRotatingFileHandler
+#        level: WARN
+#        formatter: simple
+#        filename: ./log/warn.log 
+#        backupCount: 15
+#        when: "midnight"
+#        interval: 1 
+#        encoding: utf8
+#
+#    error_file_handler:
+#        class: logging.handlers.TimedRotatingFileHandler
+#        level: ERROR
+#        formatter: simple
+#        filename: ./log/error.log  
+#        backupCount: 15
+#        when: "midnight"
+#        interval: 1 
+#        encoding: utf8
+
+loggers:
+    dao:
+        level: DEBUG
+#        handlers: [info_file_handler, error_file_handler,warn_file_handler]
+        handlers: [info_file_handler]
+        propagate: no     
+    
+    flask_server:
+        level: DEBUG
+#        handlers: [info_file_handler, error_file_handler,warn_file_handler]
+        handlers: [info_file_handler]
+        propagate: no     
+    
+    function:
+        level: DEBUG
+#        handlers: [info_file_handler, error_file_handler,warn_file_handler]
+        handlers: [info_file_handler]
+        propagate: no     
+
+    private_utils:
+        level: INFO
+#        handlers: [info_file_handler, error_file_handler,warn_file_handler]
+        handlers: [info_file_handler]
+        propagate: no     
+
+
+    threads:
+        level: INFO
+#        handlers: [info_file_handler, error_file_handler,warn_file_handler]
+        handlers: [info_file_handler]
+        propagate: no
+    
+    utils:
+        level: INFO
+#        handlers: [info_file_handler, error_file_handler,warn_file_handler]
+        handlers: [info_file_handler]
+        propagate: no      
+
+root:
+    level: INFO
+#    handlers: [info_file_handler, error_file_handler,warn_file_handler]
+    handlers: [info_file_handler]
+

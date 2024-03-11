@@ -1,0 +1,8 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+
+#remove old index (ELK)
+40 */4 * * *  cd /home/rmjames0345/docker-compose/BtoB_API_server/log && rm -f /home/rmjames0345/docker-compose/BtoB_API_server/log/info_??.log.????-* && rm -f /home/rmjames0345/docker-compose/BtoB_API_server/log/info_?.log.????-*
+
+#delete B2B api server log 
+0 */12 * * *  cd /home/da02_saturn2022_work/shell/ && /home/da02_saturn2022_work/shell/deleteLog.sh 

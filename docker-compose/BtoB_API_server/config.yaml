@@ -1,0 +1,27 @@
+VERSION: d1.0.0.1
+
+TIMEZONE: Asia/Taipei
+TIMEZONE_DIFF: +08:00
+
+FLASK_SETTING:
+    HOST: 10.100.6.8
+    PORT: 15672
+    DEBUG: True
+
+NON_CLOSED_GAME_LIST:
+    - '52'
+    - 'GB2'
+    - 'GB6'
+    - '212'
+    - '154'
+    - '148'
+    - '201'
+    
+GAMES: 10
+
+CURRENCY: #for recommendGame by currency
+    - CNY
+    - KRW
+    - VND
+    - THB
+    - IDR

@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  dataApi:
+    container_name: api_server
+    image: 'asia.gcr.io/nepnep-5566/da1/btob_api_server:latest'
+    command: "gunicorn --workers=12  --bind=0.0.0.0:8080  --reload -c wsgi.py wsgi:app"
+    restart: always
+    ports:
+      - '8080:8080'
+    privileged: true
+    volumes:
+      - /home/rmjames0345/docker-compose/BtoB_API_server/log:/BtoB_API_server/log
+      - /home/rmjames0345/docker-compose/BtoB_API_server/config.yaml:/BtoB_API_server/config.yaml
+      - /home/rmjames0345/docker-compose/BtoB_API_server/dbConfig.yaml:/BtoB_API_server/dbConfig.yaml
+      - /home/rmjames0345/docker-compose/BtoB_API_server/logging.yaml:/BtoB_API_server/logging.yaml
